@@ -10,6 +10,14 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://fridayyy3000.github.io/gaurav.najpande/photo.jpg">
   <link rel="canonical" href="https://fridayyy3000.github.io/gaurav.najpande/">
+  <script>
+    (function () {
+      var stored; try { stored = localStorage.getItem('gaurav-theme'); } catch (e) {}
+      var mode = (stored === 'light' || stored === 'dark') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', mode);
+    })();
+  </script>
+  <script src="theme.js" defer></script>
   <link rel="stylesheet" href="styles.css">
   <title>Home · Gaurav Najpande</title>
 </head>
@@ -17,46 +25,71 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="shell header-inner">
-    <a class="brand" href="index.html"><span class="brand-mark">GN<span>.</span></span><span class="brand-name">Gaurav Najpande</span></a>
-    <nav class="navigation" aria-label="Main navigation"><a href="index.html" class="active" aria-current="page">Home</a>
-<a href="publications.html">Publications</a>
-<a href="projects.html">Projects</a>
-<a href="experience.html">Experience</a>
-<a href="photography.html">Photography</a>
-<a href="blog.html">Blog</a></nav>
+    <a class="brand" href="index.html">Gaurav Najpande</a>
+    <div class="header-actions">
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="index.html" data-page="home" class="active" aria-current="page">Home</a>
+        <a href="publications.html" data-page="publications">Publications</a>
+        <a href="projects.html" data-page="projects">Projects</a>
+        <a href="experience.html" data-page="experience">Experience</a>
+        <a href="photography.html" data-page="photography">Photography</a>
+        <a href="blog.html" data-page="blog">Blog</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle light and dark theme"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark</span></button>
+    </div>
   </div>
 </header>
 <main id="main" class="shell">
-<section class="hero">
+<section class="hero" aria-labelledby="page-title">
   <div class="hero-copy">
-    <p class="eyebrow"><span class="status-dot"></span> Visiting Researcher · CoRAL Lab · Arizona State University</p>
-    <h1>Gaurav<br><em>Najpande.</em></h1>
-    <p class="hero-lead">I build AI systems that <strong>reason with evidence</strong> — from messy tables and diagrams to evolving clinical documents.</p>
-    <p>I'm a visiting researcher at <a href="https://www.asu.edu/">Arizona State University</a>, working with Prof. <a href="https://coral-lab-asu.github.io/">Vivek Gupta</a> in the <a href="https://coral-lab-asu.github.io/">CoRAL Lab</a>. I earned my M.S. in Data Science, Analytics and Engineering from ASU in 2026.</p>
-    <p>My work sits at the intersection of <strong>trustworthy AI, NLP, multimodal reasoning, retrieval, and evaluation</strong>. I care about turning research ideas into reliable, usable systems.</p>
-    <div class="action-row"><a class="button primary" href="publications.html">Explore publications <span aria-hidden="true">↗</span></a><a class="button secondary" href="projects.html">Selected projects <span aria-hidden="true">→</span></a></div>
-    <div class="social-line"><a href="https://scholar.google.com/citations?user=jLCXMWIAAAAJ&hl=en">Google Scholar</a><span>·</span><a href="https://github.com/fridayyy3000">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/gauravnajpande/">LinkedIn</a><span>·</span><a href="https://drive.google.com/file/d/1BmWW0odEc3wfLXZzVUU_iHBEUoj4rLY7/view">CV</a><span>·</span><a href="mailto:gnajpand@asu.edu">Email</a></div>
+    <h1 id="page-title">Gaurav Najpande</h1>
+    <p class="academic-role">Visiting Researcher · CoRAL Lab · Arizona State University</p>
+    <p>I am a visiting researcher at <a href="https://www.asu.edu/">Arizona State University</a>, working with Prof. <a href="https://coral-lab-asu.github.io/">Vivek Gupta</a> in the <a href="https://coral-lab-asu.github.io/">CoRAL Lab</a>. I received my M.S. in Data Science, Analytics and Engineering from ASU in 2026.</p>
+    <p>My research focuses on <strong>trustworthy AI and evidence-grounded reasoning</strong>: enabling language and vision models to reason reliably over structured data, multimodal documents, and evolving sources of information.</p>
+    <p>More broadly, I am interested in <strong>NLP, multimodal learning, retrieval, model evaluation, and reliable AI systems</strong>. I am exploring PhD research opportunities in these areas.</p>
+    <div class="profile-links" aria-label="Professional links">
+      <a href="mailto:gnajpand@asu.edu">Email</a>
+      <a href="https://scholar.google.com/citations?user=jLCXMWIAAAAJ&amp;hl=en">Google Scholar</a>
+      <a href="https://github.com/fridayyy3000">GitHub</a>
+      <a href="https://www.linkedin.com/in/gauravnajpande/">LinkedIn</a>
+      <a href="https://drive.google.com/file/d/1BmWW0odEc3wfLXZzVUU_iHBEUoj4rLY7/view">CV</a>
+    </div>
   </div>
-  <figure class="portrait"><img src="photo.jpg" alt="Portrait of Gaurav Najpande" width="360" height="450"><figcaption><span>Researcher by day. Curious builder, always.</span><span>Tempe, AZ</span></figcaption></figure>
+  <figure class="portrait">
+    <img src="photo.jpg" alt="Portrait of Gaurav Najpande" width="205" height="255">
+    <figcaption>Tempe, Arizona</figcaption>
+  </figure>
 </section>
-<section class="home-stripe" aria-label="Research at a glance"><div><strong>3</strong><span>EMNLP '26 papers</span></div><div><strong>1</strong><span>NeurIPS '26 paper</span></div><div><strong>2026</strong><span>M.S. at ASU</span></div><div><strong>∞</strong><span>Questions worth asking</span></div></section>
-<section class="content-section">
-  <div class="section-heading"><div><p class="section-kicker">Updates &amp; milestones</p><h2>News &amp; timeline</h2></div><p class="section-aside">A few moments from research, engineering, and life.</p></div>
+<section class="content-section" aria-labelledby="news-heading">
+  <div class="section-heading"><h2 id="news-heading">News</h2><span class="section-note">Research &amp; milestones</span></div>
   <ol class="timeline"><li class="timeline-item"><time datetime="2026-10">Oct 2026</time><p>Presented <strong>QUIETT</strong>, <strong>CAPTR</strong>, and <strong>SentryLine</strong> at <a href="https://2026.emnlp.org/">EMNLP 2026</a> in Budapest, Hungary.</p></li>
 <li class="timeline-item"><time datetime="2026-10">Oct 2026</time><p>Our <a href="https://doi.org/10.64898/2026.10.01.756091">EviSearch clinical evidence extraction preprint</a> was posted on bioRxiv.</p></li>
 <li class="timeline-item"><time datetime="2026-09">Sep 2026</time><p><a href="https://arxiv.org/abs/2604.25231">DRAGON</a> was accepted to <strong>NeurIPS 2026</strong> (Evaluations &amp; Datasets track).</p></li>
 <li class="timeline-item"><time datetime="2026-08">Aug 2026</time><p><strong>Three papers accepted at EMNLP 2026:</strong> QUIETT (Findings), CAPTR (Main), and SentryLine (System Demonstrations).</p></li>
 <li class="timeline-item"><time datetime="2026-08">Aug 2026</time><p>Completed my M.S. in Data Science, Analytics and Engineering at Arizona State University.</p></li>
-<li class="timeline-item"><time datetime="2026-07">Jul 2026</time><p>Successfully defended my master's thesis, <em>Exploring Structure Transformation and Evidence Attribution for Trustworthy AI</em>.</p></li>
-<li class="timeline-item"><time datetime="2025-05">May 2025</time><p>Joined the <a href="https://coral-lab-asu.github.io/">CoRAL Lab</a> at ASU as a graduate researcher.</p></li>
+<li class="timeline-item"><time datetime="2026-07">Jul 2026</time><p>Successfully defended my master's thesis, <em>Exploring Structure Transformation and Evidence Attribution for Trustworthy AI</em>.</p></li></ol>
+  <details class="older-news"><summary>Earlier updates (7)</summary><ol class="timeline"><li class="timeline-item"><time datetime="2025-05">May 2025</time><p>Joined the <a href="https://coral-lab-asu.github.io/">CoRAL Lab</a> at ASU as a graduate researcher.</p></li>
 <li class="timeline-item"><time datetime="2025-03">Mar 2025</time><p>Began working as a Learning Technology Communications Aide with the <strong>ASU School of Life Sciences</strong>.</p></li>
 <li class="timeline-item"><time datetime="2024-08">Aug 2024</time><p>Moved to Arizona and began my master's degree at <strong>Arizona State University</strong>.</p></li>
 <li class="timeline-item"><time datetime="2023-11">Nov 2023</time><p>Stepped into a <strong>Team Lead / Project Engineer</strong> role at Technoventor Innovations in Mumbai.</p></li>
 <li class="timeline-item"><time datetime="2023-07">Jul 2023</time><p>Recognized by the <strong>Maker Bhavan Foundation</strong> for my contributions to the <strong>Invention Factory</strong> initiative.</p></li>
 <li class="timeline-item"><time datetime="2023-05">May 2023</time><p>Started as a <strong>Project Engineer at Technoventor Innovations</strong>; also completed my bachelor's degree in Electronics.</p></li>
-<li class="timeline-item"><time datetime="2023-01">Jan 2023</time><p>Began a Lab Engineer internship at Technoventor Innovations after earlier hands-on work at FabLab Nagpur.</p></li></ol>
+<li class="timeline-item"><time datetime="2023-01">Jan 2023</time><p>Began a Lab Engineer internship at Technoventor Innovations after earlier hands-on work at FabLab Nagpur.</p></li></ol></details>
 </section>
-<section class="next-section"><div><p class="section-kicker">Around the site</p><h2>More than a homepage.</h2><p>Explore the papers, the things I've built, and the experiences behind the work.</p></div><div class="next-links"><a href="publications.html">Publications <span>↗</span></a><a href="projects.html">Projects <span>↗</span></a><a href="experience.html">Experience <span>↗</span></a><a href="photography.html">Photography <span>↗</span></a><a href="blog.html">Writing &amp; blog <span>↗</span></a></div></section></main>
+<section class="content-section featured-publications" aria-labelledby="selected-pubs-heading">
+ <div class="section-heading"><h2 id="selected-pubs-heading">Selected publications</h2><a class="section-link" href="publications.html">All publications ↗</a></div>
+ <p class="section-note">Findings, main-conference papers, system demonstrations, evaluation benchmarks, and preprints.</p>
+ <article class="featured-publication"><div class="publication-date">2026</div><div class="featured-publication-body"><p class="pub-venue">Findings of EMNLP 2026</p><h3><a href="https://aclanthology.org/2026.findings-emnlp.1717/">QUIETT: Query-Independent Table Transformation for Robust Reasoning</a></h3><p class="pub-authors"><strong>Gaurav Najpande</strong>, Tampu Ravi Kumar, Manan Roy Choudhury, Neha Valeti, Yanjie Fu, Vivek Gupta</p><p class="pub-summary">Structure transformation for reliable table reasoning.</p><a class="paper-link" href="https://aclanthology.org/2026.findings-emnlp.1717/">Paper ↗</a></div></article>
+<article class="featured-publication"><div class="publication-date">2026</div><div class="featured-publication-body"><p class="pub-venue">NeurIPS 2026 · Evaluations & Datasets</p><h3><a href="https://arxiv.org/abs/2604.25231">DRAGON: A Benchmark for Evidence-Grounded Visual Reasoning over Diagrams</a></h3><p class="pub-authors">Anirudh Iyengar, Tampu Ravi Kumar, <strong>Gaurav Najpande</strong>, Manan Suri, Dinesh Manocha, Puneet Mathur, Vivek Gupta</p><p class="pub-summary">Evidence localization and attribution for multimodal models.</p><a class="paper-link" href="https://arxiv.org/abs/2604.25231">Paper ↗</a></div></article>
+<article class="featured-publication"><div class="publication-date">2026</div><div class="featured-publication-body"><p class="pub-venue">EMNLP 2026 · Main Conference</p><h3><a href="https://aclanthology.org/2026.emnlp-main.826/">CAPTR: Caption-based Context Pruning for Multimodal Tabular Reasoning</a></h3><p class="pub-authors">Prasham Titiya, Leon Engländer, <strong>Gaurav Najpande</strong>, Tampu Ravi Kumar, Iryna Gurevych, Vivek Gupta</p><p class="pub-summary">Reducing irrelevant multimodal context while preserving visual evidence.</p><a class="paper-link" href="https://aclanthology.org/2026.emnlp-main.826/">Paper ↗</a></div></article>
+<article class="featured-publication"><div class="publication-date">2026</div><div class="featured-publication-body"><p class="pub-venue">EMNLP 2026 · System Demonstrations</p><h3><a href="https://aclanthology.org/2026.emnlp-demos.85/">SentryLine: Evidence-Grounded Question Answering over Evolving Documents in Oncology Care</a></h3><p class="pub-authors">Tampu Ravi Kumar, <strong>Gaurav Najpande</strong>, Muhammad Ali Khan, et al.</p><p class="pub-summary">Evidence-grounded clinical QA over changing medical guidelines.</p><a class="paper-link" href="https://aclanthology.org/2026.emnlp-demos.85/">Paper ↗</a></div></article>
+<article class="featured-publication"><div class="publication-date">2026</div><div class="featured-publication-body"><p class="pub-venue">bioRxiv · Preprint</p><h3><a href="https://doi.org/10.64898/2026.10.01.756091">Reliable Extraction of Clinical-Trial Evidence with Provenance, Verification, and Targeted Review (EviSearch)</a></h3><p class="pub-authors"><strong>Gaurav Najpande</strong> and collaborators</p><p class="pub-summary">Verification and traceable evidence extraction from clinical trial papers.</p><a class="paper-link" href="https://doi.org/10.64898/2026.10.01.756091">Paper ↗</a></div></article>
+</section>
+<section class="research-summary" aria-labelledby="research-summary-title">
+  <h2 class="section-title" id="research-summary-title">Research directions</h2>
+  <p>My current work centers on <strong>structured and multimodal reasoning</strong>, <strong>evidence attribution and source reliability</strong>, and <strong>evaluation of language and vision models</strong>. I am particularly interested in building systems that can identify the evidence behind a claim, rather than only produce plausible answers.</p>
+  <p><a href="projects.html">Research systems &amp; projects ↗</a> &nbsp;·&nbsp; <a href="experience.html">Experience &amp; education ↗</a></p>
+</section></main>
 <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Gaurav Najpande · Made with care in Tempe, Arizona</span><div><a href="mailto:gnajpand@asu.edu">Email</a><a href="https://scholar.google.com/citations?user=jLCXMWIAAAAJ&hl=en">Scholar</a><a href="https://github.com/fridayyy3000">GitHub</a><a href="https://www.linkedin.com/in/gauravnajpande/">LinkedIn</a></div></div></footer>
 </body>
 </html>
