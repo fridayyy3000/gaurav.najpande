@@ -17,7 +17,7 @@
       document.documentElement.setAttribute('data-theme', mode);
     })();
   </script>
-  <script src="theme.js" defer></script>
+  
   <link rel="stylesheet" href="styles.css">
   <title>Photography · Gaurav Najpande</title>
 </head>
@@ -35,7 +35,10 @@
         <a href="photography.html" data-page="photography" class="active" aria-current="page">Photography</a>
         <a href="blog.html" data-page="blog">Blog</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle light and dark theme"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark</span></button>
+      <div class="theme-switch" role="group" aria-label="Color theme">
+        <button type="button" class="theme-choice" data-set-theme="light" aria-label="Use light theme" aria-pressed="false">☀ Light</button>
+        <button type="button" class="theme-choice" data-set-theme="dark" aria-label="Use dark theme" aria-pressed="false">☾ Dark</button>
+      </div>
     </div>
   </div>
 </header>
@@ -50,5 +53,29 @@
 </div>
 <p class="small-note">Photo slots are intentionally labeled placeholders; no stock images or other people's photos are being presented as mine. Replace them with personal photographs before publication.</p></main>
 <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Gaurav Najpande · Made with care in Tempe, Arizona</span><div><a href="mailto:gnajpand@asu.edu">Email</a><a href="https://scholar.google.com/citations?user=jLCXMWIAAAAJ&hl=en">Scholar</a><a href="https://github.com/fridayyy3000">GitHub</a><a href="https://www.linkedin.com/in/gauravnajpande/">LinkedIn</a></div></div></footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll(".theme-choice");
+  if (!buttons.length) return;
+  function activate(mode) {
+    root.setAttribute("data-theme", mode);
+    for (var i = 0; i < buttons.length; i++) {
+      var active = buttons[i].getAttribute("data-set-theme") === mode;
+      buttons[i].setAttribute("aria-pressed", String(active));
+    }
+    var color = document.querySelector('meta[name="theme-color"]');
+    if (color) color.setAttribute("content", mode === "dark" ? "#111922" : "#ffffff");
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      var mode = this.getAttribute("data-set-theme");
+      activate(mode);
+      try { localStorage.setItem("gaurav-theme", mode); } catch (e) {}
+    });
+  }
+  activate(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+})();
+</script>
 </body>
 </html>

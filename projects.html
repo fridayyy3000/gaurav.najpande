@@ -17,7 +17,7 @@
       document.documentElement.setAttribute('data-theme', mode);
     })();
   </script>
-  <script src="theme.js" defer></script>
+  
   <link rel="stylesheet" href="styles.css">
   <title>Projects · Gaurav Najpande</title>
 </head>
@@ -35,7 +35,10 @@
         <a href="photography.html" data-page="photography">Photography</a>
         <a href="blog.html" data-page="blog">Blog</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle light and dark theme"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark</span></button>
+      <div class="theme-switch" role="group" aria-label="Color theme">
+        <button type="button" class="theme-choice" data-set-theme="light" aria-label="Use light theme" aria-pressed="false">☀ Light</button>
+        <button type="button" class="theme-choice" data-set-theme="dark" aria-label="Use dark theme" aria-pressed="false">☾ Dark</button>
+      </div>
     </div>
   </div>
 </header>
@@ -44,5 +47,29 @@
 <div class="project-grid"><article class="project-card"><div class="project-index">01</div><div><span class="tag">Research systems</span><h2>DocuInsight / GOV-RAG</h2><p>A conflict-aware retrieval and citation prototype for selecting governing evidence when enterprise documents disagree. Includes authority-aware reranking and interpretable source attribution.</p><p class="project-stack">Python · RAG · Retrieval · Evidence ranking</p><a class="project-link" href="https://github.com/fridayyy3000/DocuInsight-GOVRAG">View project <span aria-hidden="true">↗</span></a></div></article><article class="project-card"><div class="project-index">02</div><div><span class="tag">Research systems</span><h2>EviSearch</h2><p>Clinical-trial extraction workflow that tracks source provenance, verifies claims, and prioritizes potentially incorrect table cells for review.</p><p class="project-stack">Clinical NLP · Evidence verification</p><a class="project-link" href="https://doi.org/10.64898/2026.10.01.756091">View project <span aria-hidden="true">↗</span></a></div></article><article class="project-card"><div class="project-index">03</div><div><span class="tag">Research systems</span><h2>DRAGON / Multimodal RL Grounding</h2><p>Dataset and model-training work for evidence localization in diagrams, including supervised fine-tuning and GRPO-style reward design.</p><p class="project-stack">PyTorch · VLMs · SFT · GRPO</p><a class="project-link" href="https://arxiv.org/abs/2604.25231">View project <span aria-hidden="true">↗</span></a></div></article><article class="project-card"><div class="project-index">04</div><div><span class="tag">Research systems</span><h2>QUIETT Table Transformation</h2><p>Query-independent issue probing, planning and deterministic execution to turn structurally irregular tables into reusable SQL-ready forms.</p><p class="project-stack">Python · SQL · Agentic data pipelines</p><a class="project-link" href="https://aclanthology.org/2026.findings-emnlp.1717/">View project <span aria-hidden="true">↗</span></a></div></article><article class="project-card"><div class="project-index">05</div><div><span class="tag">Machine learning</span><h2>Transformer Neural Machine Translation</h2><p>An English–Hindi transformer encoder–decoder trained on over 90,000 bilingual sentence pairs with custom tokenization and experiment tracking.</p><p class="project-stack">PyTorch · NLP · Transformers</p></div></article><article class="project-card"><div class="project-index">06</div><div><span class="tag">Data engineering</span><h2>Yelp Data Intelligence Platform</h2><p>Distributed Apache Spark and SQL data pipelines analyzing millions of review and business records with dashboard-ready KPIs.</p><p class="project-stack">Apache Spark · SQL · PostgreSQL · Tableau</p></div></article><article class="project-card"><div class="project-index">07</div><div><span class="tag">Optimization & systems</span><h2>Automated Warehouse Planner</h2><p>Multi-agent warehouse planning and fulfillment simulations using answer-set programming with routing and collision constraints.</p><p class="project-stack">Python · Clingo · Multi-agent systems</p></div></article><article class="project-card"><div class="project-index">08</div><div><span class="tag">Machine learning</span><h2>Stock Forecast Engine</h2><p>Sequence-based forecasting with RNN/LSTM models, time-window features, and multi-horizon evaluation over historical market data.</p><p class="project-stack">Python · RNN · LSTM · Time series</p></div></article><article class="project-card"><div class="project-index">09</div><div><span class="tag">Machine learning</span><h2>CancerPredictML</h2><p>A classification and model comparison pipeline for clinical datasets, with cross-validation, feature selection and evaluation.</p><p class="project-stack">scikit-learn · Classification · Healthcare AI</p></div></article><article class="project-card"><div class="project-index">10</div><div><span class="tag">Recommendation</span><h2>Roommate Recommendation System</h2><p>Personality-informed roommate matching using Big Five survey responses and similarity-based ranking.</p><p class="project-stack">Python · Recommenders · NLP</p></div></article><article class="project-card"><div class="project-index">11</div><div><span class="tag">Sports analytics</span><h2>WASP–IPL Cricket Prediction</h2><p>Ball-by-ball cricket match modeling that estimates changing win probabilities using match context, wickets and run rate.</p><p class="project-stack">Python · Sports analytics · Forecasting</p></div></article><article class="project-card"><div class="project-index">12</div><div><span class="tag">Engineering</span><h2>FabLab & Prototyping Projects</h2><p>Hands-on maker work including a CNC drawing bot, smart-switch systems and image-recognition modules during earlier electronics engineering work.</p><p class="project-stack">Embedded systems · Computer vision · Fabrication</p></div></article></div>
 <div class="bottom-cta"><p>More prototypes, experiments, and source code live on GitHub.</p><a class="button secondary" href="https://github.com/fridayyy3000">Explore GitHub ↗</a></div></main>
 <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Gaurav Najpande · Made with care in Tempe, Arizona</span><div><a href="mailto:gnajpand@asu.edu">Email</a><a href="https://scholar.google.com/citations?user=jLCXMWIAAAAJ&hl=en">Scholar</a><a href="https://github.com/fridayyy3000">GitHub</a><a href="https://www.linkedin.com/in/gauravnajpande/">LinkedIn</a></div></div></footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll(".theme-choice");
+  if (!buttons.length) return;
+  function activate(mode) {
+    root.setAttribute("data-theme", mode);
+    for (var i = 0; i < buttons.length; i++) {
+      var active = buttons[i].getAttribute("data-set-theme") === mode;
+      buttons[i].setAttribute("aria-pressed", String(active));
+    }
+    var color = document.querySelector('meta[name="theme-color"]');
+    if (color) color.setAttribute("content", mode === "dark" ? "#111922" : "#ffffff");
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      var mode = this.getAttribute("data-set-theme");
+      activate(mode);
+      try { localStorage.setItem("gaurav-theme", mode); } catch (e) {}
+    });
+  }
+  activate(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+})();
+</script>
 </body>
 </html>
