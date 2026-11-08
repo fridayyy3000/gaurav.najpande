@@ -249,3 +249,23 @@ h1,h2,h3,p,figure{margin-top:0}
   .theme-choice { font-size: 11px; padding: 6px 6px; }
   .navigation { gap: 5px 14px; }
 }
+
+/* EMNLP photo essay images */
+.emnlp-figure { margin:26px 0 32px; }
+.emnlp-figure a { display:block; width:100%; }
+.emnlp-figure img { display:block; max-width:100%; width:100%; height:auto; border-radius:5px; border:1px solid var(--line); background:var(--soft); }
+.emnlp-figure figcaption { color:var(--muted); font-size:12px; line-height:1.6; margin:8px 0 0; }
+.emnlp-hero { margin-top:24px; }
+.emnlp-hero img { max-height:560px; object-fit:contain; object-position:center; background:var(--soft); }
+.emnlp-welcome { max-width:430px; margin:26px auto 32px; }
+.emnlp-poster img { max-height:780px; object-fit:contain; background:var(--surface); }
+.emnlp-photo-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:10px 0 32px; }
+.emnlp-photo-grid .emnlp-figure { margin:0; }
+.emnlp-photo-grid img { height:360px; object-fit:cover; object-position:center 25%; }
+.blog-cover-thumb { margin:0 0 18px; width:100%; max-width:680px; }
+.blog-cover-thumb img { width:100%; height:auto; max-height:300px; object-fit:cover; object-position:center; border:1px solid var(--line); border-radius:4px; }
+@media (max-width:650px) {
+ .emnlp-photo-grid { grid-template-columns:1fr; gap:22px; }
+ .emnlp-photo-grid img { height:auto; max-height:none; object-fit:contain; }
+ .emnlp-hero img { max-height:none; }
+}
