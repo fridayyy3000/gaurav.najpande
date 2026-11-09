@@ -273,3 +273,9 @@ h1,h2,h3,p,figure{margin-top:0}
 /* Budapest street photo in EMNLP field notes */
 .emnlp-city { max-width:420px; margin:26px auto 32px; }
 .emnlp-city img { width:100%; height:auto; object-fit:contain; }
+
+/* Compact academic research resource links */
+.publication-links,.project-resource-links,.article-resource-links{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-top:9px;font-size:12px;line-height:1.65;font-weight:600}
+.publication-links a,.project-resource-links a,.article-resource-links a{color:var(--link)}
+.paper-actions{flex-wrap:wrap;row-gap:7px}
+.article-resource-links{margin:12px 0 24px;font-size:13px}
