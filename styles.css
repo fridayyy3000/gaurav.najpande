@@ -269,3 +269,7 @@ h1,h2,h3,p,figure{margin-top:0}
  .emnlp-photo-grid img { height:auto; max-height:none; object-fit:contain; }
  .emnlp-hero img { max-height:none; }
 }
+
+/* Budapest street photo in EMNLP field notes */
+.emnlp-city { max-width:420px; margin:26px auto 32px; }
+.emnlp-city img { width:100%; height:auto; object-fit:contain; }
