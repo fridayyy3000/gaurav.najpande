@@ -283,3 +283,11 @@ h1,h2,h3,p,figure{margin-top:0}
 /* Keep resource links in a consistent, readable order at all sizes. */
 .paper-actions,.publication-links,.project-resource-links,.article-resource-links{display:flex;flex-wrap:wrap;gap:5px 16px;align-items:baseline}
 .paper-actions a,.publication-links a,.project-resource-links a,.article-resource-links a{white-space:nowrap}
+
+/* Publications grouped into peer-reviewed works, preprints, and thesis */
+.publication-section{margin:32px 0 38px}
+.publication-section-heading{font:600 24px/1.28 Georgia,"Times New Roman",serif;margin:0 0 13px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.publication-section .paper-list{border-top:0}
+.publication-section:first-of-type{margin-top:24px}
+#masters-thesis{scroll-margin-top:24px}
+@media(max-width:670px){.publication-section-heading{font-size:22px}}
