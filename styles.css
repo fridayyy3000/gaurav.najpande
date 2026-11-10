@@ -279,3 +279,7 @@ h1,h2,h3,p,figure{margin-top:0}
 .publication-links a,.project-resource-links a,.article-resource-links a{color:var(--link)}
 .paper-actions{flex-wrap:wrap;row-gap:7px}
 .article-resource-links{margin:12px 0 24px;font-size:13px}
+
+/* Keep resource links in a consistent, readable order at all sizes. */
+.paper-actions,.publication-links,.project-resource-links,.article-resource-links{display:flex;flex-wrap:wrap;gap:5px 16px;align-items:baseline}
+.paper-actions a,.publication-links a,.project-resource-links a,.article-resource-links a{white-space:nowrap}
