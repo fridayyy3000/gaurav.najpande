@@ -13,7 +13,7 @@
   <script>
     (function () {
       var stored; try { stored = localStorage.getItem('gaurav-theme'); } catch (e) {}
-      var mode = (stored === 'light' || stored === 'dark') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var mode = stored === 'dark' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', mode);
     })();
   </script>
