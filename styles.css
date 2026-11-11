@@ -291,3 +291,7 @@ h1,h2,h3,p,figure{margin-top:0}
 .publication-section:first-of-type{margin-top:24px}
 #masters-thesis{scroll-margin-top:24px}
 @media(max-width:670px){.publication-section-heading{font-size:22px}}
+
+/* Text-style email copy control matching the profile links */
+.profile-links .copy-email{border:0;background:transparent;padding:0;margin:0;color:var(--link);font:inherit;line-height:inherit;cursor:pointer;white-space:nowrap}
+.profile-links .copy-email:hover{text-decoration:underline;text-underline-offset:3px}
